@@ -1,0 +1,189 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <meta name="description" content="">
+    <meta name="author" content="">
+
+    <title>Exercícios Clássicos de Física</title>
+
+    <!--Java Script-->
+    <script src="js/myScript.js"></script>
+
+    <!-- Bootstrap core CSS -->
+    <link href="vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">
+
+    <!-- Custom fonts for this template -->
+    <link href="vendor/fontawesome-free/css/all.min.css" rel="stylesheet">
+    <link href="vendor/simple-line-icons/css/simple-line-icons.css" rel="stylesheet" type="text/css">
+    <link href="https://fonts.googleapis.com/css?family=Lato:300,400,700,300italic,400italic,700italic" rel="stylesheet"
+        type="text/css">
+
+    <!-- Custom styles for this template -->
+    <link href="css/landing-page.min.css" rel="stylesheet">
+
+    <!-- Custom Font-->
+    <link rel="stylesheet" href="fonts/stylesheet.css" type="text/css" charset="utf-8" />
+
+    <!--- -->
+</head>
+
+<body>
+
+    <!-- Navigation -->
+    <nav class="navbar navbar-light bg-light static-top">
+        <div class="container">
+            <a class="navbar-brand" href="#">Exercícios Clássicos de Física</a>
+            <a class="btn btn-dark" href="#">Sign In</a>
+        </div>
+    </nav>
+
+    <!-- Stick Footer -->
+    <main role="main" class="container">
+        <h1 class="mt-5">Adicionar cargas:</h1>
+        <p class="lead">Adicione 2 ou 3 cargas e seus valores e posicionamentos a fim de realizar o cáclulo </p>
+    </main>
+
+    <!-- Table-->
+    <table class="table text-center">
+        <thead class="thead-dark">
+            <tr>
+                <th scope="col">#</th>
+                <th scope="col">Carga</th>
+                <th scope="col">Medida</th>
+                <th scope="col">Posição</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr>
+                <th scope="row">1</th>
+                <td contenteditable="true" id="carga01"></td>
+                <td>
+                    <div class="btn-group btn-group-toggle" data-toggle="buttons">
+                        <label class="btn btn-dark active">
+                            <input type="radio" name="micro" id="micro1" autocomplete="off" checked> µC
+                        </label>
+                        <label class="btn btn-dark">
+                            <input type="radio" name="nano" id="nano1" autocomplete="off"> nC
+                        </label>
+                        <label class="btn btn-dark">
+                            <input type="radio" name="cullon" id="option1" autocomplete="off"> C
+                        </label>
+                    </div>
+                </td>
+                <td contenteditable="true" id="posicao01"></td>
+            </tr>
+            <tr>
+                <th scope="row">2</th>
+                <td contenteditable="true" id="carga02"></td>
+                <td>
+                    <div class="btn-group btn-group-toggle" data-toggle="buttons">
+                        <label class="btn btn-dark active">
+                            <input type="radio" name="micro" id="micro2" autocomplete="off" checked> µC
+                        </label>
+                        <label class="btn btn-dark">
+                            <input type="radio" name="nano" id="nano2" autocomplete="off"> nC
+                        </label>
+                        <label class="btn btn-dark">
+                            <input type="radio" name="cullon" id="option2" autocomplete="off"> C
+                        </label>
+                    </div>
+                </td>
+                <td contenteditable="true" id="posicao02"></td>
+            </tr>
+            <tr>
+                <th scope="row">3</th>
+                <td contenteditable="true" id="carga03"></td>
+                <td>
+                    <div class="btn-group btn-group-toggle" data-toggle="buttons">
+                        <label class="btn btn-dark active">
+                            <input type="radio" name="micro" id="micro3" autocomplete="off" checked> µC
+                        </label>
+                        <label class="btn btn-dark">
+                            <input type="radio" name="nano" id="nano3" autocomplete="off"> nC
+                        </label>
+                        <label class="btn btn-dark">
+                            <input type="radio" name="cullon" id="option3" autocomplete="off"> C
+                        </label>
+                    </div>
+                </td>
+                <td contenteditable="true" id="posicao03"></td>
+            </tr>
+        </tbody>
+    </table>
+
+    <!-- Button -->
+    <div class="form-group center-block">
+        <label class="col-md-4 control-label" for="calcular"></label>
+        <div class="col-md-4">
+            <button id="singlebutton" onclick="linha()" name="calcular" class="btn btn-dark center-block">
+                Calcular
+            </button>
+        </div>
+    </div>
+    <!-- Card with Image-->
+    <div class="card" style="width: 20rem; margin: 0 auto; float: none; margin-bottom: 10px;">
+        <img class="card-img-top" src="img/cargas-eletricasTumb.png" alt="Card image cap">
+        <div class="card-body">
+            <h5 class="card-title">Cargas em linha</h5>
+            <p class="card-text" id="forca">Resultado: </p>
+        </div>
+    </div>
+
+    <!-- Footer -->
+    <footer class="footer bg-light">
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-6 h-100 text-center text-lg-left my-auto">
+                    <ul class="list-inline mb-2">
+                        <li class="list-inline-item">
+                            <a href="#">About</a>
+                        </li>
+                        <li class="list-inline-item">&sdot;</li>
+                        <li class="list-inline-item">
+                            <a href="#">Contact</a>
+                        </li>
+                        <li class="list-inline-item">&sdot;</li>
+                        <li class="list-inline-item">
+                            <a href="#">Terms of Use</a>
+                        </li>
+                        <li class="list-inline-item">&sdot;</li>
+                        <li class="list-inline-item">
+                            <a href="#">Privacy Policy</a>
+                        </li>
+                    </ul>
+                    <p class="text-muted small mb-4 mb-lg-0">&copy; Your Website 2019. All Rights Reserved.</p>
+                </div>
+                <div class="col-lg-6 h-100 text-center text-lg-right my-auto">
+                    <ul class="list-inline mb-0">
+                        <li class="list-inline-item mr-3">
+                            <a href="#">
+                                <i class="fab fa-facebook fa-2x fa-fw"></i>
+                            </a>
+                        </li>
+                        <li class="list-inline-item mr-3">
+                            <a href="#">
+                                <i class="fab fa-twitter-square fa-2x fa-fw"></i>
+                            </a>
+                        </li>
+                        <li class="list-inline-item">
+                            <a href="#">
+                                <i class="fab fa-instagram fa-2x fa-fw"></i>
+                            </a>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Bootstrap core JavaScript -->
+    <script src="vendor/jquery/jquery.min.js"></script>
+    <script src="vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
+
+</body>
+
+</html>

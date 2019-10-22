@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.8.1/css/all.css"
+        integrity="sha384-50oBUHEmvpQ+1lW4y57PTFmhCaXp0ML5d60M1M7uH2+nqUivzIebhndOJK28anvf" crossorigin="anonymous">
+    <link rel="stylesheet" type="text/css" href="css/style.css">
+    <meta charset="utf-8">
+    <script src="https://code.jquery.com/jquery-1.12.4.min.js"
+        integrity="sha384-nvAa0+6Qg9clwYCGGPpDQLVpLNn0fRaROjHqs13t4Ggj3Ez50XnGQqc/r8MhnRDZ" crossorigin="anonymous">
+    </script>
+
+    <script src="js/myScript.js"></script>
+
+</head>
+
+<body>
+    <div class="inputs">
+
+        <h1>Adicionar cargas:</h1>
+        <table class="blueTable">
+            <thead>
+                <tr>
+                    <th>Cargas</th>
+                    <th>Medidas</th>
+                    <th>Posições</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td id="carga01" contenteditable="true"></td>
+                    <td> µC<input type="radio" id="micro1" name="q1"> nC<input type="radio" id="nano1" name="q1"></td>
+                    <td id="posicao01" contenteditable="true"></td>
+                    
+                </tr>
+                <tr>
+                    <td id="carga02" contenteditable="true"></td>
+                    <td> µC<input type="radio" id="micro2" name="q2"> nC<input type="radio" id="nano2" name="q2"></td>
+                    <td id="posicao02" contenteditable="true"></td>
+                </tr>
+                <tr>
+                    <td id="carga03" contenteditable="true"></td>
+                    <td> µC<input type="radio" id="micro3" name="q3"> nC<input type="radio" id="nano3" name="q3"></td>
+                    <td id="posicao03" contenteditable="true"></td>
+                </tr>
+            </tbody>
+        </table>
+        <br><br>
+        <div class="conteudo" id="divlinha">
+            <img src="img/linha.png" id="imglinha">
+
+        </div>
+        <br><br>
+        <a href=# onclick="linha()" class="button">Calcular</a> <a href="index.html" class="button"> Voltar</a>
+        <br><br>
+        <h1 id = "forca">F =  </h1>
+
+</body>

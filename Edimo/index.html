@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="utf-8">
+    <script src="https://code.jquery.com/jquery-1.12.4.min.js"
+        integrity="sha384-nvAa0+6Qg9clwYCGGPpDQLVpLNn0fRaROjHqs13t4Ggj3Ez50XnGQqc/r8MhnRDZ" crossorigin="anonymous">
+    </script>
+
+    <script src="js/myScript.js"></script>
+
+</head>
+
+<body>
+        <table class="blueTable">
+                <thead>
+                    <tr>
+                        <th>Aceleração</th>
+                        <th>Massa</th>
+                        <th>Forçã Resultante</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td id="aceleracao" contenteditable="true"></td>
+                        <td id="massa" contenteditable="true"></td>       
+                        <td id="forca_resultante" contenteditable="true"></td>                
+                    </tr>
+                 
+                </tbody>
+            </table>
+    <button onclick="calcularFr()">Calcular Força Resultane</button>
+    <button onclick="calcularAceleracao()">Calcular Acelaração</button>
+    <button onclick="calcularMassa()">Calcular Massa</button>
+</body>
