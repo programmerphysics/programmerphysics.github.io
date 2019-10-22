@@ -287,11 +287,10 @@ function haste_no_eixo() {
         carga *= Math.pow(10, -9);
     }
 
+    resultado = carga / (4 * Math.PI * epsilon * comprimentoInicial * (comprimentoHaste + comprimentoInicial));
 
 
     var resolucao = ("E = Q / 4 * π * Ԑ0 * a * (l + a)");
-    
-    resultado = carga / (4 * Math.PI * epsilon * comprimentoInicial * (comprimentoHaste + comprimentoInicial));
 
     resolucao += ("\n E = " + carga + " / 4 * π * " + epsilon + " * " + comprimentoInicial + " * ("
         + comprimentoHaste + " + " + comprimentoInicial + ")");
@@ -299,7 +298,8 @@ function haste_no_eixo() {
         + (comprimentoHaste + comprimentoInicial));
     resolucao += ("\n E = " + carga + " / "
         + 4 * Math.PI * epsilon * comprimentoInicial * (comprimentoHaste + comprimentoInicial));
-    resultado += "\n" + carga / (4 * Math.PI * epsilon * comprimentoInicial * (comprimentoHaste + comprimentoInicial));
+ 
+ 
     resolucao += ("\n E = " + resultado);
 
 
