@@ -1,3 +1,5 @@
+
+
 function linha() {
     // F = K * (|Q1| * |Q2|) / Distancia^2
     var d;
@@ -102,32 +104,32 @@ function triangulo() {
     var q2 = parseFloat($("#carga02").text().trim());
     var q3 = parseFloat($("#carga03").text().trim());
     var d = parseFloat($("#distancia").text().trim());
-    if (((q1) && (q2) > 0) && ((q3) < 0)) {} else
-    if (((q1) && (q3) > 0) && ((q2) < 0)) {
-        f13 = forcaResultante(0, d, q1, q3);
-        
-
-        f23 = forcaResultante(0, d, q2, q3);
+    if (((q1) && (q2) > 0) && ((q3) < 0)) { } else
+        if (((q1) && (q3) > 0) && ((q2) < 0)) {
+            f13 = forcaResultante(0, d, q1, q3);
 
 
-        fr = Math.pow(f13, 2) + Math.pow(f23, 2) - (2 * f13 * f23 * Math.cos(rad_to_degrees(120)));
-
-        fr = Math.sqrt(fr);
-
-        f = fr;
-
-        if (f == Infinity) {
-            $('#forca').html("F = <i class='fas fa-infinity'></i>");
-        } else {
-            $('#forca').html("F = " + f);
-        }
+            f23 = forcaResultante(0, d, q2, q3);
 
 
-    } else
-    if (((q2) && (q3) > 0) && ((q1) < 0)) {} else
-    if (((q1) && (q2) < 0) && ((q3) > 0)) {} else
-    if (((q1) && (q3) < 0) && ((q2) > 0)) {} else
-    if (((q2) && (q3) < 0) && ((q1) > 0)) {}
+            fr = Math.pow(f13, 2) + Math.pow(f23, 2) - (2 * f13 * f23 * Math.cos(rad_to_degrees(120)));
+
+            fr = Math.sqrt(fr);
+
+            f = fr;
+
+            if (f == Infinity) {
+                $('#forca').html("F = <i class='fas fa-infinity'></i>");
+            } else {
+                $('#forca').html("F = " + f);
+            }
+
+
+        } else
+            if (((q2) && (q3) > 0) && ((q1) < 0)) { } else
+                if (((q1) && (q2) < 0) && ((q3) > 0)) { } else
+                    if (((q1) && (q3) < 0) && ((q2) > 0)) { } else
+                        if (((q2) && (q3) < 0) && ((q1) > 0)) { }
 }
 
 
@@ -140,34 +142,175 @@ function quadrado() {
     var q4 = parseFloat($("#carga04").text().trim());
     var d = parseFloat($("#distancia").text().trim());
     k = 9 * Math.pow(10, 9);
-    
-        f14 = forcaResultante(0, d, q1, q4);
-        f24 = forcaResultante(0, d, q2, q4);
-        f34 = forcaResultante(0, d, q3, q4);
+
+    f14 = forcaResultante(0, d, q1, q4);
+    f24 = forcaResultante(0, d, q2, q4);
+    f34 = forcaResultante(0, d, q3, q4);
 
 
-        fr = Math.pow(f14, 2) + Math.pow(f24, 2) + Math.pow(f34, 2);
+    fr = Math.pow(f14, 2) + Math.pow(f24, 2) + Math.pow(f34, 2);
 
-        fr = Math.sqrt(fr);
+    fr = Math.sqrt(fr);
 
-        f = fr;
-
-
-        console.log("Força: " + f14);
-        console.log("Força: " + f24);
-        console.log("Força: " + f34);
-        console.log("carga1: " + q1);
-        console.log("carga2: " + q2);
-        console.log("carga3: " + q3);
-        console.log("carga4: " + q4);
-        console.log("distancia: " + d);
-        console.log("Constante: " + k);
-
-        if (f == Infinity) {
-            $('#forca').html("F = <i class='fas fa-infinity'></i>");
-        } else {
-            $('#forca').html("F = " + f);
-        }
+    f = fr;
 
 
+    console.log("Força: " + f14);
+    console.log("Força: " + f24);
+    console.log("Força: " + f34);
+    console.log("carga1: " + q1);
+    console.log("carga2: " + q2);
+    console.log("carga3: " + q3);
+    console.log("carga4: " + q4);
+    console.log("distancia: " + d);
+    console.log("Constante: " + k);
+
+    if (f == Infinity) {
+        $('#forca').html("F = <i class='fas fa-infinity'></i>");
+    } else {
+        $('#forca').html("F = " + f);
+    }
+
+
+}
+function haste_fora_do_eixo() {
+
+
+    var distancia_x = $("#distancia_x").val();
+    var exp_dist_x = $("#exp_distancia_x").val();;
+    var unidade_distancia_x = ($("#unidade_distancia_x option:selected").text().trim());
+    var carga = $("#carga").val();
+    var expCarga = $("#exp_carga").val();
+    var unidade_carga = ($("#unidade_carga option:selected").text().trim());
+    var comprimentoInicial = $("#comp_inicial").val();
+    var expComprimentoInicial = $("#exp_comp_inicial").val();
+    var unidade_comp_inicial = ($("#unidade_comp_inicial option:selected").text().trim());
+    var distanciaX = $("#distancia_x").val();
+    var unidade_distancia = ($("#unidade_distancia option:selected").text().trim());
+    var expCarga = $("#exp_distancia").val();
+
+    var epsilon = 8.85 * Math.pow(10, -12);
+    var resultado = null;
+
+    K = Math.pow(9, 10) ^ 9
+
+    carga *= Math.pow(10, expCarga);
+    comprimentoInicial *= Math.pow(10, expComprimentoInicial);
+    distanciaX *= Math.pow(10, exp_dist_x);
+
+
+
+    if (unidade_distancia_x == "cm") {
+        distanciaX *= Math.pow(10, -2);
+    } else if (unidade_distancia_x == "mm") {
+        distanciaX *= Math.pow(10, -4);
+    }
+
+    if (unidade_comp_inicial == "cm") {
+        comprimentoInicial *= Math.pow(10, -2);
+    } else if (unidade_comp_inicial == "mm") {
+        comprimentoInicial *= Math.pow(10, -4);
+    }
+
+    if (unidade_carga == "uc") {
+        carga *= Math.pow(10, -6);
+    } else if (unidade_carga == "nc") {
+        carga *= Math.pow(10, -9);
+    }
+
+    if (unidade_distancia == "cm") {
+        carga *= Math.pow(10, -2);
+    } else if (unidade_carga == "mm") {
+        carga *= Math.pow(10, -4);
+    }
+
+    resultado = carga / (4 * Math.PI * epsilon * distanciaX
+        * (Math.pow((Math.pow(distanciaX, 2) + Math.pow(comprimentoInicial, 2)), 0.5)));
+
+
+    var resolucao = ("E = Q / 4 * π * Ԑ0 * x * (x² + a²)¹/²");
+
+    resolucao += ("\n E = " + carga + " / 4 * π * " + epsilon + " * " + distanciaX + " * (" + distanciaX
+        + "² + " + comprimentoInicial + "²)¹/²");
+
+    resolucao += ("\n E = " + carga + " / 4 * π * " + epsilon + " * " + distanciaX + " * ("
+        + Math.pow(distanciaX, 2) + " + " + Math.pow(comprimentoInicial, 2) + ")¹/²");
+
+    resolucao += ("\n E = " + carga + " / 4 * π * " + epsilon + " * " + distanciaX + " * "
+        + (Math.pow((Math.pow(distanciaX, 2) + Math.pow(comprimentoInicial, 2)), 0.5)));
+
+    resolucao += ("\n E = " + carga + " / " + (4 * Math.PI * epsilon * distanciaX
+        * (Math.pow((Math.pow(distanciaX, 2) + Math.pow(comprimentoInicial, 2)), 0.5))));
+    resolucao += ("\n " + resultado);
+
+    $('#resolucao').html(resolucao);
+    $('#resultado').html("Resultado : " + resultado);
+}
+
+function haste_no_eixo() {
+    var comprimentoHaste = $("#comprimento_haste").val();;
+    var expComprimentoHaste = $("#exp_haste").val();;
+    var unidadeComp = ($("#unidade_comprimento option:selected").text().trim());
+    var carga = $("#carga").val();
+    var expCarga = $("#exp_carga").val();
+    var unidade_carga = ($("#unidade_carga option:selected").text().trim());
+    var comprimentoInicial = $("#comp_inicial").val();
+    var expComprimentoInicial = $("#exp_comp_inicial").val();
+    var unidade_comp_inicial = ($("#unidade_comp_inicial option:selected").text().trim());
+    var epsilon = 8.85 * Math.pow(10, -12);
+    var resultado = null;
+    K = Math.pow(9, 10) ^ 9
+
+
+    comprimentoHaste *= Math.pow(10, expComprimentoHaste);
+    carga *= (10 ^ expCarga);
+    comprimentoInicial *= Math.pow(10, expComprimentoInicial);
+
+
+
+
+    if (unidadeComp == "cm") {
+        comprimentoHaste *= Math.pow(10, -2);
+    } else if (unidadeComp == "mm") {
+        comprimentoHaste *= Math.pow(10, -4);
+    }
+
+    if (unidade_comp_inicial == "cm") {
+        comprimentoInicial *= Math.pow(10, -2);
+    } else if (unidade_comp_inicial == "mm") {
+        comprimentoInicial *= Math.pow(10, -4);
+    }
+
+    if (unidade_carga == "uc") {
+        carga *= Math.pow(10, -6);
+    } else if (unidade_carga == "nc") {
+        carga *= Math.pow(10, -9);
+    }
+
+
+
+    var resolucao = ("E = Q / 4 * π * Ԑ0 * x * (x² + a²)¹/²");
+
+    resolucao += ("\n E = " + carga + " / 4 * π * " + epsilon + " * " + distanciaX + " * (" + distanciaX
+        + "² + " + comprimentoInicial + "²)¹/²");
+
+    resolucao += ("\nE = " + carga + " / 4 * π * " + epsilon + " * " + distanciaX + " * ("
+        + Math.pow(distanciaX, 2) + " + " + Math.pow(comprimentoInicial, 2) + ")¹/²");
+
+    resolucao += ("\nE = " + carga + " / 4 * π * " + epsilon + " * " + distanciaX + " * "
+        + (Math.pow((Math.pow(distanciaX, 2) + Math.pow(comprimentoInicial, 2)), 0.5)));
+
+    resolucao += ("\nE = " + carga + " / " + (4 * Math.PI * epsilon * distanciaX
+        * (Math.pow((Math.pow(distanciaX, 2) + Math.pow(comprimentoInicial, 2)), 0.5))));
+
+    resultado = carga / (4 * Math.PI * epsilon * distanciaX
+        * (Math.pow((Math.pow(distanciaX, 2) + Math.pow(comprimentoInicial, 2)), 0.5)));
+
+    resolucao += ("\n" + resultado);
+
+
+    resultado = carga / (4 * Math.PI * epsilon * comprimentoInicial * (comprimentoHaste + comprimentoInicial));
+
+    $('#resolucao').html(resolucao);
+    $('#resultado').html("Resultado : " + resultado);
 }

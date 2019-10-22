@@ -41,7 +41,83 @@
         </div>
     </nav>
 
+    <div class="card bg-light">
+            <article class="card-body mx-auto" style="max-width: 400px;">
+                <h4 class="card-title mt-3 text-center">Haste fora do eixo </h4>
+                <p class="text-center">Insira as Informações:</p>
+    
+                <p class="text-center">Episilon = 8.85 * (10 ^ (- 12)) </p>
+                <p class="text-center">Unidade de Medida = (C^2) /(n * m^2) </p>
+    
+                <label for="distancia_x">Distancia X:</label>
+                <div class="form-group input-group">
+                    <input name="distancia_x" id="distancia_x" class="form-control" placeholder="(X)" type="number">
+                </div> <!-- form-group// -->
+                <label for="exp_distancia_x">exponencial da distancia x:</label>
+                <div class="form-group input-group">
+                    <input name="exp_distancia_x" id="exp_distancia_x" class="form-control" placeholder="exp" type="number">
+                </div> <!-- form-group// -->
+    
+                <div class="form-group">
+                    <label for="unidade_distancia_x">Unidade de Medida:</label>
+                    <select multiple class="form-control" id="unidade_distancia_x">
+                        <option>m</option>
+                        <option>cm</option>
+                        <option>mm</option>
+                    </select>
+                </div> <!-- form-group// -->
+    
+                <label for="carga">Carga:</label>
+                <div class="form-group input-group">
+                    <input name="carga" id="carga" class="form-control" placeholder="(Q)" type="number">
+                </div> <!-- form-group// -->
+                <label for="exp_carga">exponencial da carga:</label>
+                <div class="form-group input-group">
+                    <input name="exp_carga" id="exp_carga" class="form-control" placeholder="exp" type="number">
+                </div> <!-- form-group// -->
+    
+                <div class="form-group">
+                    <label for="unidade_carga">Unidade de Medida:</label>
+                    <select multiple class="form-control" id="unidade_carga">
+                        <option>C</option>
+                        <option>uC</option>
+                        <option>nC</option>
+                    </select>
+                </div> <!-- form-group// -->
+    
 
+
+                <label for="comp_inicial">Comprimento Inicial:</label>
+                <div class="form-group input-group">
+                    <input name="comp_inicial" id="comp_inicial" class="form-control" placeholder="(A)" type="number">
+                </div> <!-- form-group// -->
+                <label for="exp_comp_inicial">exponencial do comprimento Inicial:</label>
+                <div class="form-group input-group">
+                    <input name="exp_comp_inicial" id="exp_comp_inicial" class="form-control" placeholder="exp" type="number">
+                </div> <!-- form-group// -->
+    
+                <div class="form-group">
+                    <label for="unidade_comp_inicial">Unidade de Medida:</label>
+                    <select multiple class="form-control" id="unidade_comp_inicial">
+                        <option>m</option>
+                        <option>cm</option>
+                        <option>mm</option>
+                    </select>
+                </div> <!-- form-group// -->
+                <p class="text-center">K = (9 * 10) ^9 </p>
+                <p class="text-center">Unidade de Medida = N * (m²/C²) </p>
+                <div class="form-group">
+                    <button class="btn btn-primary btn-block btn-dark" onclick="haste_fora_do_eixo()"> Resolver </button>
+                </div> <!-- form-group// -->
+
+                <div class="form-group">
+                        <label for="resolucao">resolucao</label>
+                        <textarea class="form-control" id="resolucao" rows="4" readonly></textarea>
+                    </div>
+            </article>
+        </div> <!-- card.// -->
+    
+    
     <!-- Card with Image-->
     <div class="card" style="width: 20rem; margin: 0 auto; float: none; margin-bottom: 10px;">
         <img class="card-img-top" src="img/hasteInfinita.png" alt="Card image cap">
