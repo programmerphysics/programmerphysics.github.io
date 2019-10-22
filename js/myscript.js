@@ -263,7 +263,7 @@ function haste_no_eixo() {
 
 
     comprimentoHaste *= Math.pow(10, expComprimentoHaste);
-    carga *= (10 ^ expCarga);
+    carga *= Math.pow(10 ,expCarga);
     comprimentoInicial *= Math.pow(10, expComprimentoInicial);
 
 
@@ -289,27 +289,21 @@ function haste_no_eixo() {
 
 
 
-    var resolucao = ("E = Q / 4 * π * Ԑ0 * x * (x² + a²)¹/²");
-
-    resolucao += ("\n E = " + carga + " / 4 * π * " + epsilon + " * " + distanciaX + " * (" + distanciaX
-        + "² + " + comprimentoInicial + "²)¹/²");
-
-    resolucao += ("\nE = " + carga + " / 4 * π * " + epsilon + " * " + distanciaX + " * ("
-        + Math.pow(distanciaX, 2) + " + " + Math.pow(comprimentoInicial, 2) + ")¹/²");
-
-    resolucao += ("\nE = " + carga + " / 4 * π * " + epsilon + " * " + distanciaX + " * "
-        + (Math.pow((Math.pow(distanciaX, 2) + Math.pow(comprimentoInicial, 2)), 0.5)));
-
-    resolucao += ("\nE = " + carga + " / " + (4 * Math.PI * epsilon * distanciaX
-        * (Math.pow((Math.pow(distanciaX, 2) + Math.pow(comprimentoInicial, 2)), 0.5))));
-
-    resultado = carga / (4 * Math.PI * epsilon * distanciaX
-        * (Math.pow((Math.pow(distanciaX, 2) + Math.pow(comprimentoInicial, 2)), 0.5)));
-
-    resolucao += ("\n" + resultado);
-
-
+    var resolucao = ("E = Q / 4 * π * Ԑ0 * a * (l + a)");
+    
     resultado = carga / (4 * Math.PI * epsilon * comprimentoInicial * (comprimentoHaste + comprimentoInicial));
+
+    resolucao += ("\n E = " + carga + " / 4 * π * " + epsilon + " * " + comprimentoInicial + " * ("
+        + comprimentoHaste + " + " + comprimentoInicial + ")");
+    resolucao += ("\n E = " + carga + " / 4 * π * " + epsilon + " * " + comprimentoInicial + " * "
+        + (comprimentoHaste + comprimentoInicial));
+    resolucao += ("\n E = " + carga + " / "
+        + 4 * Math.PI * epsilon * comprimentoInicial * (comprimentoHaste + comprimentoInicial));
+    resultado += "\n" + carga / (4 * Math.PI * epsilon * comprimentoInicial * (comprimentoHaste + comprimentoInicial));
+    resolucao += ("\n E = " + resultado);
+
+
+    
 
     $('#resolucao').html(resolucao);
     $('#resultado').html("Resultado : " + resultado);
